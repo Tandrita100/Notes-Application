@@ -43,4 +43,19 @@ public class NoteService {
         return noteRepository.findByImportantTrue();
     }
 
+    public Note updateNote(Long id, Note updateNote){
+
+        Note existingNote = noteRepository.findById(id).orElse(null);
+
+        if(existingNote != null){
+            existingNote.setTitle(updateNote.getTitle());
+            existingNote.setContent(updateNote.getContent());
+            existingNote.setCategory(updateNote.getCategory());
+            existingNote.setImportant(updateNote.getImportant());
+            existingNote.setDate(updateNote.getDate());
+
+            return noteRepository.save(existingNote);
+        }
+        return null;
+    }
 }

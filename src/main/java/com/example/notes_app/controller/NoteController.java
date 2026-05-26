@@ -52,4 +52,9 @@ public class NoteController {
         return noteService.findImportantNotes();
     }
 
+    @PutMapping("/{id}")
+    public Note updateNote(@PathVariable Long id, @RequestBody Note updateNote){
+        return noteService.updateNote(id,updateNote);
+    }
+
 }
