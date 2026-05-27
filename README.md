@@ -122,4 +122,4 @@ spring.datasource.password=your_password
 
 ## 👩‍💻 Author
 
-Developed by {your name}
+Developed by Tandrita Baidya
